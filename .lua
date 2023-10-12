@@ -1,5 +1,13 @@
 repeat task.wait() until game:IsLoaded();
 
+getgenv().Valve = {
+    ["UWP Boost"] = {
+        UWP = {
+            UWP_Optimizer = true,
+        }
+    }
+}
+
 local vim = game:GetService("VirtualInputManager")
 setfpscap(5000)
 
