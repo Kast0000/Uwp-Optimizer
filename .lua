@@ -1,18 +1,15 @@
+-- // I didnt make this for anyone whos wondering
+-- // Credits to https://v3rmillion.net/showthread.php?tid=1213784
+
 repeat task.wait() until game:IsLoaded();
 
-getgenv().Valve = {
-    ["UWP Boost"] = {
-        UWP = {
-            UWP_Optimizer = true,
-        }
-    }
-}
+getgenv().UWP_Optimizer = true, -- // Turns It On
 
 local vim = game:GetService("VirtualInputManager")
 setfpscap(5000)
 
 game.DescendantAdded:Connect(function(d)
-  if d.Name == "MainView" and d.Parent.Name == "DevConsoleUI" and Valve["UWP Boost"].UWP.UWP_Optimizer then
+  if d.Name == "MainView" and d.Parent.Name == "DevConsoleUI" and UWP_Optimizer then
       task.wait()
       local screen = d.Parent.Parent.Parent
       screen.Enabled = false;
@@ -25,7 +22,7 @@ vim:SendKeyEvent(false, "F9", 0, game)
 
 while true do
   task.wait()
-  if not Valve["UWP Boost"].UWP.UWP_Optimizer then
+  if not UWP_Optimizer then
       continue;
   end
  
